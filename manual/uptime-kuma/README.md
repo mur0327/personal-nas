@@ -13,7 +13,7 @@
 ## <img src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/docker.svg" width="32px" height="32px"> Docker 설치
 Docker가 편리하므로 Docker를 사용하기로 했다.
 
-[Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+[⚙️ Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 > [!NOTE]
 > ```bash
 > # Add Docker's official GPG key:
@@ -36,7 +36,7 @@ Docker가 편리하므로 Docker를 사용하기로 했다.
 > ```
 
 ## <img src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/uptime-kuma.svg" width="32px" height="32px"> Uptime Kuma 설치
-[🔧 How to Install](https://github.com/louislam/uptime-kuma/wiki/%F0%9F%94%A7-How-to-Install)
+[⚙️ 🔧 How to Install](https://github.com/louislam/uptime-kuma/wiki/%F0%9F%94%A7-How-to-Install)
 > [!NOTE]
 > ```yml
 > # Simple docker-compose.yml
@@ -55,8 +55,6 @@ Docker가 편리하므로 Docker를 사용하기로 했다.
 >     restart: always
 > ```
 
-## <img src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/uptime-kuma.svg" width="32px" height="32px"> Uptime Kuma 사용법
-
 Uptime Kuma는 자체 대시보드를 제공한다.
 
 내부 아이피로는 접속할 수 없으니 ```http://공용아이피:3001```로 접속할 수 있다.
@@ -66,4 +64,21 @@ Uptime Kuma는 자체 대시보드를 제공한다.
 리버스 프록시 서버는 NAS에 설치돼 있기 때문에, 포트를 개방하지 않고 통신하기 위해 VPN을 사용하기로 했다.
 
 ## <img src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/tailscale-light.svg" width="32px" height="32px"> Tailscale 설치
-처음에는 WireGuard와 Netbird를 사용하려고 했으나, 실패하고 Tailscale이 더 쉽게 바로 돼서 사용하게 됐다.
+처음에는 WireGuard와 Netbird를 사용하려고 했으나, Tailscale이 더 쉽고 좋아서 사용하게 됐다.
+
+1. [Tailscale 로그인](https://login.tailscale.com/start)
+2. Synology NAS에 Tailscale 패키지 설치<br>
+[⚙️ Access Synology NAS from anywhere](https://tailscale.com/kb/1131/synology?q=synology)
+3. Oracle VM에 Tailscale 설치<br>
+[⚙️ Access Oracle Cloud VMs privately using Tailscale](https://tailscale.com/kb/1149/cloud-oracle)
+
+## <img src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/uptime-kuma.svg" width="32px" height="32px"> Uptime Kuma 사용법
+![Monitoring](https://github.com/user-attachments/assets/8605d539-008e-4414-90aa-01980418a4e9)
+
+새로운 모니터링 추가하기 버튼을 눌러 모니터링을 추가하면 된다.
+
+모니터링을 추가할 때 ```http://나스VPN아이피:포트```로 지정하면 된다.
+
+도커 컨테이너를 모니터링 하기 위해서는 [Docker Socket Proxy](/manual/docker-socket-proxy/README.md)를 사용해야 한다.
+
+알람 설정도 가능하며, 본인은 디스코드 웹훅으로 설정해놨다.
