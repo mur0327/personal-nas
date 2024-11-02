@@ -79,6 +79,6 @@ Uptime Kuma는 자체 대시보드를 제공한다.
 
 모니터링을 추가할 때 ```http://나스VPN아이피:포트```로 지정하면 된다.
 
-도커 컨테이너를 모니터링 하기 위해서는 [Docker Socket Proxy](/manual/docker-socket-proxy/README.md)를 사용해야 한다.
+도커 컨테이너를 모니터링 하기 위해서는 [Docker Socket Proxy](/services/docker-socket-proxy/README.md)를 사용해야 한다.
 
 알람 설정도 가능하며, 본인은 디스코드 웹훅으로 설정해놨다.
