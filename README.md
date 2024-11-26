@@ -21,7 +21,7 @@ Synology NAS DS220+
 | Vaultwarden                                    | 비밀번호 관리 도구         |
 | Watchtower                                     | 도커 이미지 자동 업데이트  |
 
-## Stacks Structure
+## 스택 구조
 
 ```bash
 .
