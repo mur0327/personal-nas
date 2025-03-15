@@ -9,7 +9,7 @@ Synology NAS DS220+
 | ~~Apache Guacamole~~                           | 원격 접속 및 SSH 관리 도구 |
 | Authentik                                      | SSO 인증 서비스            |
 | Beszel                                         | NAS 모니터링 도구          |
-| Caddy                                          | 리버스 프록시 서버         |
+| [Caddy](/services/caddy/README.md)             | 리버스 프록시 서버         |
 | ~~Code Server~~                                | 원격 VSCode 환경           |
 | Docker Socket Proxy                            | 도커 소켓 보안 연결        |
 | Dockge                                         | 도커 컴포즈 관리           |

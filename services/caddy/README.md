@@ -1,6 +1,7 @@
 # <img src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/caddy.svg" width="32px" height="32px"> Caddy
 Caddy는 리버스 프록시를 사용하는 방법이 매우 간단하다.
 
+## 설치하기
 [⚙️ Caddy Docker Compose](https://caddyserver.com/docs/running#docker-compose)
 > [!NOTE]
 > ```yml
@@ -9,9 +10,9 @@ Caddy는 리버스 프록시를 사용하는 방법이 매우 간단하다.
 >     image: caddy:latest
 >     restart: unless-stopped
 >     ports:
->       - "80:80"
->       - "443:443"
->       - "443:443/udp"
+>       - "임의포트1:80"
+>       - "임의포트2:443"
+>       - "임의포트2:443/udp"
 >     volumes:
 >       - ./Caddyfile:/etc/caddy/Caddyfile
 >       - ./site:/srv
@@ -31,15 +32,20 @@ Caddy는 리버스 프록시를 사용하는 방법이 매우 간단하다.
 
 Synology NAS는 80, 443 포트를 사용 중이기 때문에 다른 포트를 지정해야 한다.
 
-예시로, 다음과 같이 설정하면 된다.
-```yml
-"8080:80"
-"8443:443"
-"8443:443/udp"
+## 포트 포워딩
+KT GiGA WiFi 기준 다음과 같이 설정한다.
+
+<img src="https://github.com/user-attachments/assets/0ea56e5b-1d83-462c-a7a1-4e070660113b">
+
+## Caddyfile 설정하기
+[📃 reverse_proxy (Caddyfile directive)](https://caddyserver.com/docs/caddyfile/directives/reverse_proxy)
+
 ```
+example.com {
+	reverse_proxy localhost:5000
+}
 
-그 다음에는 공유기에 접속해서 포트 포워딩을 해야 한다.
-
-TCP 80번 포트는 8080으로, TCP/UDP 443 포트는 8443번으로 설정한다.
-
-- [ ] Caddyfile 설정법 작성하기
+sub.example.com {
+	reverse_proxy localhost:5050
+}
+```
